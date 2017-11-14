@@ -13,7 +13,7 @@
       <li><label>80~99</label> <input type="radio" name="optradio" id="opt5" value="option5"></li>
       <li><label>I don't know.</label> <input type="radio" name="optradio" id="opt6" value="option6"></li>
     </ul>
-<input type="submit" value="submit" />
+<input type="submit" value="submit" onclick="showmessage()"/>
 </form>
 <script>
 var seconds = 30;
@@ -42,10 +42,10 @@ function timer() {
 }
 function showmessage() {
 	if (seconds == 0) {
-		document.write("Time's up!")
+		document.getElementById('countdown').innerHTML = ("Time's up. You cannot submit.")
 	}
 	else{
-		document.write("Submit successfully!")
+		document.getElementById('countdown').innerHTML = "Submit successfully!";
 	}
 }
 var countdownTimer = setInterval('timer()', 1000);
