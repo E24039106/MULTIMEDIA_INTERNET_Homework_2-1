@@ -4,14 +4,14 @@
 <span id="countdown" class="timer"></span>
 
 <form id="contact-form" action="http://moeas.ee.ncku.edu.tw:8080/HW2/submitReply.aspx" method="post" target="_myFrame">
-<p>what place do you want to go 
+<p>How old are you? 
     <ul>
-      <li><label for="japan">Japan</label> <input type="radio" name="optradio" id="japan" value="option1" ></li>
-      <li><label for="china">china</label> <input type="radio" name="optradio" id="china" value="option2"></li>
-      <li><label for="German">German</label> <input type="radio" name="optradio" id="German" value="option3"></li>
-      <li><label for="korea">korea</label> <input type="radio" name="optradio" id="korea" value="option4"></li>
-      <li><label for="africa">africa</label> <input type="radio" name="optradio" id="africa" value="option5"></li>
-	   <li><label for="America">America</label> <input type="radio" name="optradio" id="America" value="option6"></li>
+      <li><label for="0~19">Japan</label> <input type="radio" name="optradio" id="japan" value="option1" ></li>
+      <li><label for="20~39">china</label> <input type="radio" name="optradio" id="china" value="option2"></li>
+      <li><label for="40~59">German</label> <input type="radio" name="optradio" id="German" value="option3"></li>
+      <li><label for="60~79">korea</label> <input type="radio" name="optradio" id="korea" value="option4"></li>
+      <li><label for="80~99">africa</label> <input type="radio" name="optradio" id="africa" value="option5"></li>
+	<li><label for="I don't know.">America</label> <input type="radio" name="optradio" id="America" value="option6"></li>
     </ul>
 <input type="submit" value="submit" />
 </form>
@@ -27,16 +27,16 @@ function timer() {
     if (remainingSeconds < 10) {
         remainingSeconds = "0" + remainingSeconds; 
     }
-    document.getElementById('countdown').innerHTML = days + ":" + hours + ":" + minutes + ":" + remainingSeconds;
+    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
     if (seconds == 0) {
         clearInterval(countdownTimer);
         document.getElementById('countdown').innerHTML = "Timesup";
-		 var frm = document.getElementById('contact-form');
-       if (frm) {
-        frm.submit();
+	var frm = document.getElementById('contact-form');
+        if (frm) {
+          frm.submit();
         }
     } 
-	else {
+    else {
         seconds--;
     }
 }
