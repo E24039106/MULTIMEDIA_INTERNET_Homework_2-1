@@ -42,9 +42,11 @@ function timer() {
 }
 function showmessage() {
 	if (seconds == 0) {
+		clearInterval(countdownTimer);
 		document.getElementById('countdown').innerHTML = ("Time's up. You cannot submit.")
 	}
 	else{
+		clearInterval(countdownTimer);
 		document.getElementById('countdown').innerHTML = "Submit successfully!";
 	}
 }
